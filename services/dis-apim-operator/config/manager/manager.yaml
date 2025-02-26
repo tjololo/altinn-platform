@@ -20,7 +20,6 @@ spec:
   selector:
     matchLabels:
       control-plane: controller-manager
-      azure.workload.identity/use: "true"
   replicas: 1
   template:
     metadata:
