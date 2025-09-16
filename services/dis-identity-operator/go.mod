@@ -1,12 +1,6 @@
 module github.com/Altinn/altinn-platform/services/dis-identity-operator
 
-<<<<<<< HEAD
 go 1.24.5
-=======
-go 1.24.4
-
-godebug default=go1.24
->>>>>>> tmp-original-16-09-25-14-43
 
 require (
 	github.com/Azure/azure-service-operator/v2 v2.14.0
