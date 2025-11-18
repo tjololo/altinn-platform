@@ -63,7 +63,11 @@ type ApplicationIdentityReconciler struct {
 // the user.
 //
 // For more details, check Reconcile and its Result here:
+<<<<<<< HEAD
+// - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.22.4/pkg/reconcile
+=======
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.20.4/pkg/reconcile
+>>>>>>> tmp-original-18-11-25-02-03
 func (r *ApplicationIdentityReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	logger := logf.FromContext(ctx)
 	// Fetch the ApplicationIdentity instance

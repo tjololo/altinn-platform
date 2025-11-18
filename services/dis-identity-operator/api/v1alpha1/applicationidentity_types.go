@@ -37,6 +37,27 @@ type ApplicationIdentitySpec struct {
 
 // ApplicationIdentityStatus defines the observed state of ApplicationIdentity.
 type ApplicationIdentityStatus struct {
+<<<<<<< HEAD
+	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
+	// Important: Run "make" to regenerate code after modifying this file
+
+	// For Kubernetes API conventions, see:
+	// https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#typical-status-properties
+
+	// conditions represent the current state of the ApplicationIdentity resource.
+	// Each condition has a unique type and reflects the status of a specific aspect of the resource.
+	//
+	// Standard condition types include:
+	// - "Available": the resource is fully functional
+	// - "Progressing": the resource is being created or updated
+	// - "Degraded": the resource failed to reach or maintain its desired state
+	//
+	// The status of each condition is one of True, False, or Unknown.
+	// +listType=map
+	// +listMapKey=type
+	// +optional
+	Conditions []metav1.Condition `json:"conditions,omitempty"`
+=======
 	// AzureAudiences list of audiences that can appear in the issued token from Azure.
 	// +kubebuilder:validation:Optional
 	AzureAudiences []string `json:"azureAudiences,omitempty"`
@@ -51,6 +72,7 @@ type ApplicationIdentityStatus struct {
 	// ManagedIdentityName is the name of the managed identity in Azure.
 	// +kubebuilder:validation:Optional
 	ManagedIdentityName *string `json:"managedIdentityName,omitempty"`
+>>>>>>> tmp-original-18-11-25-02-03
 }
 
 type ConditionType string
@@ -75,7 +97,7 @@ type ApplicationIdentity struct {
 
 	// metadata is a standard object metadata
 	// +optional
-	metav1.ObjectMeta `json:"metadata,omitempty,omitzero"`
+	metav1.ObjectMeta `json:"metadata,omitzero"`
 
 	// spec defines the desired state of ApplicationIdentity
 	// +required
@@ -83,7 +105,7 @@ type ApplicationIdentity struct {
 
 	// status defines the observed state of ApplicationIdentity
 	// +optional
-	Status ApplicationIdentityStatus `json:"status,omitempty,omitzero"`
+	Status ApplicationIdentityStatus `json:"status,omitzero"`
 }
 
 // +kubebuilder:object:root=true
@@ -91,7 +113,7 @@ type ApplicationIdentity struct {
 // ApplicationIdentityList contains a list of ApplicationIdentity
 type ApplicationIdentityList struct {
 	metav1.TypeMeta `json:",inline"`
-	metav1.ListMeta `json:"metadata,omitempty"`
+	metav1.ListMeta `json:"metadata,omitzero"`
 	Items           []ApplicationIdentity `json:"items"`
 }
 
